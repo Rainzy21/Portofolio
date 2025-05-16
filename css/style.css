@@ -23,6 +23,10 @@ body
     text-decoration: none;
     box-sizing: border-box;
 }
+html
+{
+    scroll-behavior: smooth;
+}
 ::before,::after
 {
     box-sizing: border-box;
@@ -713,6 +717,7 @@ h3.my-proffesion
     height: 50px;
     padding: 0 50px;
 }
+/* RESPONSIVE */
 @media (max-width:1199px)
 {
     .aside
