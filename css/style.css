@@ -51,6 +51,10 @@ ul
 .main-content
 {
     padding-left: 270px;
+    transition: padding-left;
+}
+.main-content.full {
+    padding-left: 0;
 }
 .padd-15
 {
@@ -131,6 +135,19 @@ ul
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 /*aside */
+.aside {
+    transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.aside.closed {
+    left: -270px;
+}
+.main-content {
+    transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1);
+    padding-left: 270px;
+}
+.main-content.full {
+    padding-left: 0;
+}
 .aside
 {
     width: 270px;
@@ -144,7 +161,12 @@ ul
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 10;
+    transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.aside.closed {
+    left: -270px;
 }
 .aside .logo
 {
@@ -184,10 +206,10 @@ ul
     position: absolute;
     width: 20px;
     height: 20px;
-    border-top: none;
-    border-right: none;
-    top: -10px;
-    right: -10px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
 }
 .aside .nav-toggler
 {
@@ -195,14 +217,15 @@ ul
     width: 45px;
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     left: 300px;
     top: 20px;
     border-radius: 5px;
     background: var(--bg-black-100);
-    display: none;
     align-items: center;
     justify-content: center;
+    display: flex !important;
+    z-index: 20;
 }
 .aside .nav-toggler span
 {
@@ -766,5 +789,11 @@ h3.my-proffesion
     {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+}
+/* Toggler tampil di layar kecil */
+@media (max-width:1199px) {
+    .aside .nav-toggler {
+        display: flex;
     }
 }
