@@ -50,7 +50,6 @@ ul
 }
 .main-content
 {
-    padding-left: 270px;
     transition: padding-left;
 }
 .main-content.full {
@@ -164,9 +163,6 @@ ul
     flex-direction: column;
     z-index: 10;
     transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-.aside.closed {
-    left: -270px;
 }
 .aside .logo
 {
@@ -791,9 +787,11 @@ h3.my-proffesion
         max-width: 100%;
     }
 }
-/* Toggler tampil di layar kecil */
-@media (max-width:1199px) {
-    .aside .nav-toggler {
-        display: flex;
+@media (max-width:1199px)
+{
+    .about .about-content .personal-info .info-item p span
+    {
+        display: block;
+        margin-left: 0;
     }
 }
